@@ -14,42 +14,57 @@ form.addEventListener("submit", function(event) {
     form.elements.taskTime.value,
     form.elements.taskClient.value,
   )
-  console.log(taskList)
+  // console.log(taskList)
 })
 
-function displayTask(task) {
-  let item = document.createElement("li");
-  item.setAttribute("data-id", task.id);
-  item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p>`;
+function displayTasks() {
 
-  tasklist.appendChild(item);
+  tasklist.innerHTML = "";
 
-  // Clear the value of the input once the task has been added to the page
-  form.reset();
+  let localTasks = JSON.parse(localStorage.getItem('tasks'));
 
-  // Setup delete button DOM elements
-  let delButton = document.createElement("button");
-  let delButtonText = document.createTextNode("Delete");
-  delButton.appendChild(delButtonText);
-  item.appendChild(delButton); // Adds a delete button to every task
+  if (localTasks !== null) {
 
-  // Listen for when the delete button is clicked
-  delButton.addEventListener("click", function(event) {
+    localTasks.forEach((task) => {
 
-    taskList.forEach(function(taskArrayElement, taskArrayIndex) {
-      if (taskArrayElement.id == item.getAttribute('data-id')) {
-        taskList.splice(taskArrayIndex, 1)
-      }
-    })
+      console.log(task)
 
-    // Make sure the deletion worked by logging out the whole array
-    console.log(taskList)
+      // Create task items for the DOM and add to the list
+      let item = document.createElement("li");
+      item.setAttribute("data-id", task.id);
+      item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p>`;
+      tasklist.appendChild(item);
 
-    item.remove(); // Remove the task item from the page when button clicked
-    // Because we used 'let' to define the item, this will always delete the right element
+      // Clear the value of the input once the task has been added to the page
+      form.reset();
 
-  })
+      // Setup delete button DOM elements
+      let delButton = document.createElement("button");
+      let delButtonText = document.createTextNode("Delete");
+      delButton.appendChild(delButtonText);
+      item.appendChild(delButton); // Adds a delete button to every task
 
+      // Listen for when the delete button is clicked
+      delButton.addEventListener("click", function(event) {
+
+        localTasks.forEach(function(taskArrayElement, taskArrayIndex) {
+          if (taskArrayElement.id == item.getAttribute('data-id')) {
+            localTasks.splice(taskArrayIndex, 1)
+          }
+        })
+
+        localStorage.setItem('tasks', JSON.stringify(localTasks));
+
+        // Make sure the deletion worked by logging out the whole array
+        // console.log(taskList)
+
+        item.remove(); // Remove the task item from the page when button clicked
+        // Because we used 'let' to define the item, this will always delete the right element
+
+      })
+
+    }) // Closing brackets for for loop
+  } // Closing bracket for if statement
   
 }
 
@@ -74,47 +89,59 @@ function displayTask(task) {
 // console.log(task);
 
 
-// Create an array called 'taskList'
-var taskList = [];
-
 // Create a function called 'addTask'
 // Give the function input parameters for: name, type, rate, time, client
 // Paste your object definition from above in the function
 // Replace the property values with the input paramaters
 // Add the object to the taskList array
 
-function addTask(name, type, rate, time, client) {
+  function addTask(name, type, rate, time, client) {
 
-  // Creating the object with the usual property:value syntax
-  // Create task object 
-  // let task = {
-  //   name: name,
-  //   type: type,
-  //   id: Date.now(),
-  //   date: new Date().toISOString(),
-  //   rate: rate,
-  //   time: time,
-  //   client: client
-  // }
+    // Creating the object with the usual property:value syntax
+    // Create task object 
+    // let task = {
+    //   name: name,
+    //   type: type,
+    //   id: Date.now(),
+    //   date: new Date().toISOString(),
+    //   rate: rate,
+    //   time: time,
+    //   client: client
+    // }
 
-  // Creating the object, directly passing in the input parameters
-  let task = {
-    name,
-    type,
-    id: Date.now(),
-    date: new Date().toISOString(),
-    rate,
-    time,
-    client
+    // Creating the object, directly passing in the input parameters
+    let task = {
+      name,
+      type,
+      id: Date.now(),
+      date: new Date().toISOString(),
+      rate,
+      time,
+      client
+    }
+
+    // fetching and parse localStorage value
+    let localTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (localTasks == null){
+      localTasks = [task];
+    } else {
+      // Check to see if there is an existing task
+      if (localTasks.find(element => element.id === task.id)) {
+        console.log('Task ID already exists');
+      } else {
+        localTasks.push(task);
+      }
+    }
+
+    localStorage.setItem('tasks', JSON.stringify(localTasks))
+
+    displayTasks();
+
   }
-
-  taskList.push(task);
-  displayTask(task);
-
-}
 
 // Call the function with test values for the input paramaters
 addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
-
+displayTasks();
 // Log the array to the console.
-console.log(taskList);
+console.log(localTasks);
