@@ -19,50 +19,83 @@
         
             <form id="bookform">
                 <div class="form-row">
-                    <label for="bookName">Name</label>
+                    <label for="bookTitle">Title</label>
                     <input
                         type="text"
-                        name="bookName"
-                        id="bookName"
+                        name="bookTitle"
+                        id="bookTitle"
                         required="true"
+                        placeholder="e.g. To Kill a Mockingbird"
                     >
                 </div>
+
                 <div class="form-row">
-                    <label for="bookType">Type</label>
-                    <select id="bookType" name="bookType" required="true">
+                    <label for="bookAuthor">Author</label>
+                    <input
+                        type="text"
+                        name="bookAuthor"
+                        id="bookAuthor"
+                        required="true"
+                        placeholder="e.g. Harper Lee"
+                    >
+                </div>
+
+                <div class="form-row">
+                    <label for="bookCategory">Category</label>
+                    <select id="bookCategory" name="bookCategory" required="true">
                         <option value="">Select one</option>
-                        <option value="Concept Ideation">Concept Ideation</option>
-                        <option value="Wireframing">Wireframing</option>
-                        <option value="Application Coding">Application Coding</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Non-Fiction">Non-Fiction</option>
+                        <!-- If I want to make Genre options dependant on Category choice:
+                            - give Fiction and Non-Fiction an ID
+                            - create an event listener in JS that listens to this ID being clicked
+                            - if Fiction is clicked hide Non-fiction options
+                            - if Non-fiction is clicked hide Fiction options -->
                     </select>
                 </div>
+
                 <div class="form-row">
-                    <label for="bookRate">Rate</label>
+                    <label for="bookGenre">Genre</label>
+                    <select id="bookGenre" name="bookGenre" required="true">
+                        <option value="">Select one</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Non-Fiction">Non-Fiction</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="bookRating">Rating</label>
                     <input
                         type="number"
-                        name="bookRate"
-                        id="bookRate"
+                        name="bookRating"
+                        id="bookRating"
                         required="true"
+                        placeholder="e.g. 1 star"
                     >
                 </div>
+
                 <div class="form-row">
-                    <label for="bookTime">Time</label>
+                    <label for="bookComment">Comment</label>
                     <input
                         type="number"
-                        name="bookTime"
-                        id="bookTime"
+                        name="bookComment"
+                        id="bookComment"
                         required="true"
+                        placeholder="e.g. Best book I've ever read"
                     >
                 </div>
+
                 <div class="form-row">
-                    <label for="bookClient">Client</label>
+                    <label for="bookReadTime">Read Time</label>
                     <input
                         type="text"
-                        name="bookClient"
-                        id="bookClient"
+                        name="bookReadTime"
+                        id="bookReadTime"
                         required="true"
+                        placeholder="e.g. 2 months"
                     >
                 </div>
+
                 <div class="form-row">
                     <input type="submit" id="submitButton">
                 </div>
