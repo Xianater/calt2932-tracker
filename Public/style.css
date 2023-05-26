@@ -20,11 +20,19 @@ html {
     background-color: #F0CEA4;
   }
   
+  h2 {
+    font-family: 'Open sans', Courier, monospace;
+    font-size: medium;
+  
+    margin-bottom: 0;
+    
+  }
+
   form {
     max-width: 500px;
     margin: 0 auto;
     /* border: 2px solid grey; */
-    padding: 2em 1em;
+    padding: 1em 1em;
     background-color: #FFDDB5;
     border-radius: 25px;
   }
@@ -52,3 +60,19 @@ html {
     border: none;
     border-radius: 10px;
   }
+
+  #finishedbook {
+    background-color: #FFECD4;
+    width: 300px;
+    border: 0;
+    padding: 0px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
