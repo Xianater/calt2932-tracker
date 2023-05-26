@@ -5,14 +5,16 @@ const booklist = document.getElementById("booklist");
 form.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  console.log(form.elements.bookType.value)
+  console.log(form.elements.bookCategory.value)
 
   addBook(
-    form.elements.bookName.value,
-    form.elements.bookType.value,
-    form.elements.bookRate.value,
-    form.elements.bookTime.value,
-    form.elements.bookClient.value,
+    form.elements.bookTitle.value,
+    form.elements.bookAuthor.value,
+    form.elements.bookCategory.value,
+    form.elements.bookGenre.value,
+    form.elements.bookRating.value,
+    form.elements.bookComment.value,
+    form.elements.bookReadTime.value,
   )
   // console.log(bookList)
 })
@@ -32,7 +34,7 @@ function displayBooks() {
       // Create book items for the DOM and add to the list
       let item = document.createElement("li");
       item.setAttribute("data-id", book.id);
-      item.innerHTML = `<p><strong>${book.name}</strong><br>${book.type}</p>`;
+      item.innerHTML = `<p><strong>${book.title}<br>${book.author}</strong><br>${book.genre}</p>`;
       booklist.appendChild(item);
 
       // Clear the value of the input once the book has been added to the page
@@ -77,47 +79,49 @@ function displayBooks() {
 // Commented out now the object creation is included in the function
 
 // var book = {
-//   name: "Initial Sketches",
-//   type: "Concept Ideation",
+//   title: "Initial Sketches",
+//   category: "Fiction",
 //   id: Date.now(),
 //   date: new Date().toISOString(),
-//   rate: 50,
-//   time: 5,
-//   client: "Google"
+//   rating: 50,
+//   comment: 5,
+//   readtime: "Google"
 // }
 
 // console.log(books);
 
 
 // Create a function called 'addBook'
-// Give the function input parameters for: name, type, rate, time, client
+// Give the function input parameters for: title, author, category, rating, comment, readtime
 // Paste your object definition from above in the function
 // Replace the property values with the input paramaters
 // Add the object to the bookList array
 
-  function addBook(name, type, rate, time, client) {
+  function addBook(title, author, category, genre, rating, comment, readtime) {
 
     // Creating the object with the usual property:value syntax
     // Create book object 
     // let book = {
-    //   name: name,
-    //   type: type,
+    //   title: title,
+    //   category: category,
     //   id: Date.now(),
     //   date: new Date().toISOString(),
-    //   rate: rate,
-    //   time: time,
-    //   client: client
+    //   rating: rating,
+    //   comment: comment,
+    //   readtime: readtime
     // }
 
     // Creating the object, directly passing in the input parameters
     let book = {
-      name,
-      type,
+      title,
+      author,
+      category,
+      genre,
       id: Date.now(),
       date: new Date().toISOString(),
-      rate,
-      time,
-      client
+      rating,
+      comment,
+      readtime
     }
 
     // fetching and parse localStorage value
@@ -141,7 +145,7 @@ function displayBooks() {
   }
 
 // Call the function with test values for the input paramaters
-addBook("Initial Sketches", "Concept Ideation", 50, 5, "Google");
+addBook("Hail Mary", "Andy Weir", "Fiction", "Fantasy", 50, 5, "Google");
 displayBooks();
 // Log the array to the console.
 console.log(localBooks);
