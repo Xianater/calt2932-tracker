@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Task Tracker</title>
+        <title>Book Tracker</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
-            <h1>Task Tracker</h1>
+            <h1>Book Tracker</h1>
         </header>
 
         <div>
@@ -17,19 +17,19 @@
             <h2>Finished a book?</h2>
             </div>
         
-            <form id="taskform">
+            <form id="bookform">
                 <div class="form-row">
-                    <label for="taskName">Name</label>
+                    <label for="bookName">Name</label>
                     <input
                         type="text"
-                        name="taskName"
-                        id="taskName"
+                        name="bookName"
+                        id="bookName"
                         required="true"
                     >
                 </div>
                 <div class="form-row">
-                    <label for="taskType">Type</label>
-                    <select id="taskType" name="taskType" required="true">
+                    <label for="bookType">Type</label>
+                    <select id="bookType" name="bookType" required="true">
                         <option value="">Select one</option>
                         <option value="Concept Ideation">Concept Ideation</option>
                         <option value="Wireframing">Wireframing</option>
@@ -37,29 +37,29 @@
                     </select>
                 </div>
                 <div class="form-row">
-                    <label for="taskRate">Rate</label>
+                    <label for="bookRate">Rate</label>
                     <input
                         type="number"
-                        name="taskRate"
-                        id="taskRate"
+                        name="bookRate"
+                        id="bookRate"
                         required="true"
                     >
                 </div>
                 <div class="form-row">
-                    <label for="taskTime">Time</label>
+                    <label for="bookTime">Time</label>
                     <input
                         type="number"
-                        name="taskTime"
-                        id="taskTime"
+                        name="bookTime"
+                        id="bookTime"
                         required="true"
                     >
                 </div>
                 <div class="form-row">
-                    <label for="taskClient">Client</label>
+                    <label for="bookClient">Client</label>
                     <input
                         type="text"
-                        name="taskClient"
-                        id="taskClient"
+                        name="bookClient"
+                        id="bookClient"
                         required="true"
                     >
                 </div>
@@ -69,8 +69,8 @@
             </form>
         </div>
 
-        <h2>Tasks</h2>
-        <ul id="tasklist"></ul>
+        <h2>Books</h2>
+        <ul id="booklist"></ul>
         <script src="script.js"></script>
     </body>
 </html>
