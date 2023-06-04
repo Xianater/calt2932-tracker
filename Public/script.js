@@ -19,6 +19,20 @@ form.addEventListener("submit", function(event) {
   // console.log(bookList)
 })
 
+document.addEventListener("DOMContentLoaded", () =>{
+  let category = document.getElementById("bookCategory");
+  category.addEventListener("input", categorySelected);
+});
+function categorySelected(ev) {
+  console.log(ev.target.value);
+  let categoryName = ev.target.value.toLowerCase();
+  if (!document.getElementById(categoryName)) return;
+
+  let genre = document.getElementById("bookGenre");
+  genre.setAttribute("list", categoryName);
+}
+
+
 function displayBooks() {
 
   booklist.innerHTML = "";
