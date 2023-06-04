@@ -42,26 +42,74 @@
 
                 <div class="form-row">
                     <label for="bookCategory">Category</label>
-                    <select id="bookCategory" name="bookCategory" required="true">
-                        <option value="">Select one</option>
-                        <option value="Fiction">Fiction</option>
-                        <option value="Non-Fiction">Non-Fiction</option>
-                        <!-- If I want to make Genre options dependant on Category choice:
-                            - give Fiction and Non-Fiction an ID
-                            - create an event listener in JS that listens to this ID being clicked
-                            - if Fiction is clicked hide Non-fiction options
-                            - if Non-fiction is clicked hide Fiction options -->
-                    </select>
+                    <!-- <select id="bookCategory" name="bookCategory" required="true"> -->
+                        <input
+                        type="text" 
+                        id="bookCategory"
+                        list="categories"
+                        name="bookCategory"
+                        placeholder="Select a Category"
+                        required="true"
+                        />
+                    </input>
                 </div>
+
+                <datalist id="categories">
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                </datalist>
 
                 <div class="form-row">
                     <label for="bookGenre">Genre</label>
-                    <select id="bookGenre" name="bookGenre" required="true">
-                        <option value="">Select one</option>
-                        <option value="Fiction">Fiction</option>
-                        <option value="Non-Fiction">Non-Fiction</option>
-                    </select>
+                    <input
+                    type="text"
+                    id="bookGenre"
+                    list="genres"
+                    name="bookGenre"
+                    placeholder="Select a Genre"
+                    required="true"
+                    />
                 </div>
+
+                <datalist id="fiction">
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Children's Book">Children's Book</option>
+                    <option value="Young adult">Young adult</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Humor">Humor</option>
+                    <option value="Poetry">Poetry</option>
+                    <option value="Mythology">Mythology</option>
+                </datalist>
+                
+                <datalist id="non-fiction">
+                    <option value="Biography">Biography</option>
+                    <option value="History">History</option>
+                    <option value="True Crime">True Crime</option>
+                    <option value="Philosophy">Philosophy</option>
+                    <option value="Religion">Religion</option>
+                    <option value="Science">Science</option>
+                    <option value="Self-help">Self-help</option>
+                    <option value="Medical">Medical</option>
+                    <option value="Psychology">Psychology</option>
+                    <option value="Art">Art</option>
+                    <option value="Crafting">Crafting</option>
+                    <option value="DIY">DIY</option>
+                    <option value="Photography">Photography</option>
+                    <option value="Gardening">Gardening</option>
+                    <option value="Cooking">Cooking</option>
+                    <option value="Computers & Software">Computers & Software</option>
+                    <option value="Health & Fitness">Health & Fitness</option>
+                    <option value="Political Science">Political Science</option>
+                    <option value="Business & economics">Business & economics</option>
+                    <option value="Parenting">Parenting</option>
+                    <option value="Education">Education</option>
+                    <option value="Music">Music</option>
+                </datalist>
 
                 <div class="form-row">
                     <label for="bookRating">Rating</label>
