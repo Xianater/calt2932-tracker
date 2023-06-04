@@ -1,78 +1,160 @@
 html {
-    height: 100%;
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
   
-  body {
-    background-color: #EEDAC2;
-    margin: 0;
-    padding: 0;
-  }   
+body {
+  background-color: #EEDAC2;
+  margin: 0;
+  padding: 0;
+}   
 
-  header > h1 {
-    font-family: 'Open sans', Courier, monospace;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    text-align: center;
-    background-color: #F0CEA4;
-  }
-  
-  h2 {
-    font-family: 'Open sans', Courier, monospace;
-    font-size: medium;
-  
-    margin-bottom: 0;
-    
-  }
+header > h1 {
+  font-family: 'Open sans', Courier, monospace;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #F0CEA4;
+}
 
-  form {
-    max-width: 500px;
-    margin: 0 auto;
-    /* border: 2px solid grey; */
-    padding: 1em 1em;
-    background-color: #FFDDB5;
-    border-radius: 25px;
-  }
-  
-  .form-row {
-    display: flex;
-    justify-content: flex-end;
-    padding: .5em;
-  }
-  
-  .form-row > label {
-    width: 100px;
-  }
-  
-  .form-row > input,
-  .form-row > select {
-    padding: .5em;
-    flex-grow: 1;
-    border: none;
-    border-radius: 10px;
-  }
+h2 {
+  font-family: 'Open sans', Courier, monospace;
+  font-size: medium;
 
-  #submitButton {
-    background-color: #F0CEA4;
-    border: none;
-    border-radius: 10px;
-  }
+  margin-bottom: 0;
+  
+}
 
-  #finishedbook {
-    background-color: #FFECD4;
-    width: 300px;
-    border: 0;
-    padding: 0px;
-    padding-bottom: 10px;
-    margin: 0 auto;
-    margin-top: 10px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } 
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  /* border: 2px solid grey; */
+  padding: 1em 1em;
+  background-color: #FFDDB5;
+  border-radius: 25px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: .5em;
+}
+
+.form-row > label {
+  width: 100px;
+}
+
+.form-row > input,
+.form-row > select {
+  padding: .5em;
+  flex-grow: 1;
+  border: none;
+  border-radius: 10px;
+}
+
+#submitButton {
+  background-color: #F0CEA4;
+  border: none;
+  border-radius: 10px;
+}
+
+#finishedbook {
+  background-color: #FFECD4;
+  width: 300px;
+  border: 0;
+  padding: 0px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+#booksread {
+  background-color: #FFECD4;
+  width: 300px;
+  border: 0;
+  padding: 0px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#fictionnonfictionlist {
+  max-width: 1200px;
+  min-width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+  column-gap: 50px;
+}
+
+#category {
+  max-width: 1200px;
+  margin: 0 auto;
+  column-gap: 50px;
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* #book-row {
+  width: 70%;
+  height: auto;
+  margin: auto;
+  align-items: center;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: #FFDCC5;
+  border: 0px solid #c3c3c3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+} */
+
+
+
+/* @media (min-width: 600px) {
+  #fictionnonfictionlist { grid-template-columns: repeat(2, 1fr); }
+} */
+
+/* #booklist {
+  display: flex;
+  justify-content: center;
+} */
+
+li {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  margin: 50px 0;
+  align-items: center;
+  padding: 10px;
+  background-color: #FFDCC5;
+  border: 0px solid #c3c3c3;
+}
+
+h3 {
+  width: 300px;
+  height: 300px;
+}
