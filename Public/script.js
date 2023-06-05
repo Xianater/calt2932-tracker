@@ -1,6 +1,7 @@
 // Setting up variables for our HTML elements using DOM selection
 const form = document.getElementById("bookform");
 const booklist = document.getElementById("booklist");
+const booklist2 = document.getElementById("booklist2");
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
@@ -37,9 +38,11 @@ function categorySelected(ev) {
 function displayBooks() {
 
   booklist.innerHTML = "";
+  booklist2.innerHTML = "";
 
   let localBooks = JSON.parse(localStorage.getItem('books'));
   // console.log(localBooks);
+  
   if (localBooks !== null) {
 
     localBooks.forEach((book) => {
@@ -50,7 +53,17 @@ function displayBooks() {
       let item = document.createElement("li");
       item.setAttribute("data-id", book.id);
       item.innerHTML = `<p><strong>${book.title}<br>${book.author}</strong><br>${book.genre}</p>`;
-      booklist.appendChild(item);
+      
+      // alert("book category =" + book.category);
+      if (book.category == 'Fiction') { 
+        // alert("adding to fiction");
+        // alert(book.title + " is " + book.category);
+        booklist.appendChild(item);
+      }
+      else if (book.category == 'Non-Fiction'){
+        // alert("adding to non-fiction");
+        booklist2.appendChild(item);
+      }
 
       // Clear the value of the input once the book has been added to the page
       form.reset();

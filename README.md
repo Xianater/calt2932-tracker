@@ -45,3 +45,8 @@ Setting up category and genre input relationship
 - making genre drop down options dependant on category choice, done following this tutorial: https://www.youtube.com/watch?v=wHJYSCppr4k&t=2s
 - adding all fiction & non-fiction genre options in html
 
+05/06/23
+Updating form rating input
+- replacing rating text input with radio buttons for a rating out of 5, code from this page: https://iamkate.com/code/star-rating-widget/
+- highlighted iteration: radio buttons is an improvement for the users experience completing the form
+- cleaning up various console.logs in js
