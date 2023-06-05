@@ -5,7 +5,7 @@ const booklist = document.getElementById("booklist");
 form.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  console.log(form.elements.bookCategory.value)
+  // console.log(form.elements.bookCategory.value)
 
   addBook(
     form.elements.bookTitle.value,
@@ -19,12 +19,13 @@ form.addEventListener("submit", function(event) {
   // console.log(bookList)
 })
 
+// Event listener listening for what is written in the categories input box
 document.addEventListener("DOMContentLoaded", () =>{
   let category = document.getElementById("bookCategory");
   category.addEventListener("input", categorySelected);
 });
+// Function that changes genre options between two datalists depending on category choice
 function categorySelected(ev) {
-  console.log(ev.target.value);
   let categoryName = ev.target.value.toLowerCase();
   if (!document.getElementById(categoryName)) return;
 
@@ -38,12 +39,12 @@ function displayBooks() {
   booklist.innerHTML = "";
 
   let localBooks = JSON.parse(localStorage.getItem('books'));
-
+  // console.log(localBooks);
   if (localBooks !== null) {
 
     localBooks.forEach((book) => {
 
-      console.log(book)
+      // console.log(book)
 
       // Create book items for the DOM and add to the list
       let item = document.createElement("li");
@@ -71,8 +72,6 @@ function displayBooks() {
 
         localStorage.setItem('books', JSON.stringify(localBooks));
 
-        // Make sure the deletion worked by logging out the whole array
-        // console.log(bookList)
 
         item.remove(); // Remove the book item from the page when button clicked
         // Because we used 'let' to define the item, this will always delete the right element
@@ -161,5 +160,7 @@ function displayBooks() {
 // Call the function with test values for the input paramaters
 addBook("Hail Mary", "Andy Weir", "Fiction", "Fantasy", 50, 5, "Google");
 displayBooks();
+
+let localBooks = JSON.parse(localStorage.getItem('books'));
 // Log the array to the console.
 console.log(localBooks);

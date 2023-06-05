@@ -111,21 +111,32 @@
                     <option value="Music">Music</option>
                 </datalist>
 
-                <div class="form-row">
+                <div class="rating">
                     <label for="bookRating">Rating</label>
-                    <input
+                        <input id="bookRating" type="radio" name="rating" value="1">
+                        <label for="bookRating">1/5</label>
+                        <input id="bookRating" type="radio" name="rating" value="2">
+                        <label for="bookRating">2/5</label>
+                        <input id="bookRating" type="radio" name="rating" value="3">
+                        <label for="bookRating">3/5</label>
+                        <input id="bookRating" type="radio" name="rating" value="4">
+                        <label for="bookRating">4/5</label>
+                        <input id="bookRating" type="radio" name="rating" value="5">
+                        <label for="bookRating">5/5</label>
+                    
+                    <!-- <input
                         type="number"
                         name="bookRating"
                         id="bookRating"
                         required="true"
                         placeholder="e.g. 1 star"
-                    >
+                    > -->
                 </div>
 
                 <div class="form-row">
                     <label for="bookComment">Comment</label>
                     <input
-                        type="number"
+                        type="text"
                         name="bookComment"
                         id="bookComment"
                         required="true"

@@ -55,6 +55,20 @@ form {
   border-radius: 10px;
 }
 
+.rating{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: .5em;
+  margin: 0 auto;
+}
+
+.rating label{
+  display: grid;
+  justify-content: left;
+  width: 15%;
+}
+
 #submitButton {
   background-color: #F0CEA4;
   border: none;
