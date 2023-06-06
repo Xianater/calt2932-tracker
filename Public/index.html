@@ -7,16 +7,20 @@
         <title>Book Tracker</title>
         <link rel="stylesheet" href="style.css">
     </head>
+    <!-- Webpage body -->
     <body>
+        <!-- Webpage heading -->
         <header>
             <h1>Book Tracker</h1>
         </header>
 
+        <!-- Form div -->
         <div>
+            <!-- Form header -->
             <div id="finishedbook">
             <h2>Finished a book?</h2>
             </div>
-        
+            <!-- Form -->
             <form id="bookform">
                 <div class="form-row">
                     <label for="bookTitle">Title</label>
@@ -42,7 +46,6 @@
 
                 <div class="form-row">
                     <label for="bookCategory">Category</label>
-                    <!-- <select id="bookCategory" name="bookCategory" required="true"> -->
                         <input
                         type="text" 
                         id="bookCategory"
@@ -54,6 +57,7 @@
                     </input>
                 </div>
 
+                <!-- category options datalist -->
                 <datalist id="categories">
                     <option value="Fiction">Fiction</option>
                     <option value="Non-Fiction">Non-Fiction</option>
@@ -71,6 +75,7 @@
                     />
                 </div>
 
+                <!-- genre options datalist -->
                 <datalist id="fiction">
                     <option value="Mystery">Mystery</option>
                     <option value="Romance">Romance</option>
@@ -123,14 +128,6 @@
                         <label for="bookRating">4/5</label>
                         <input id="bookRating" type="radio" name="rating" value="5">
                         <label for="bookRating">5/5</label>
-                    
-                    <!-- <input
-                        type="number"
-                        name="bookRating"
-                        id="bookRating"
-                        required="true"
-                        placeholder="e.g. 1 star"
-                    > -->
                 </div>
 
                 <div class="form-row">
@@ -141,6 +138,7 @@
                         id="bookComment"
                         required="true"
                         placeholder="e.g. Best book I've ever read"
+                        maxlength="200"
                     >
                 </div>
 
@@ -163,34 +161,22 @@
         
         <br>
 
+        <!-- booklist header -->
         <div id="booksread">
         <h2 style="text-align: center;">Books you've read this year</h2>
         </div>
-        
+        <!-- booklists -->
         <div id="fictionnonfictionlist">
-        <!-- <div id="fictionnonfiction">
-            <p><strong>Fiction</strong></p>
-            <p><strong>Non-Fiction</strong></p>
-        </div>
-        <div class="booksgrid">
-            
-            <div id="booklist"></div>
-            <li>1</li>
-
-        </div> -->
-    
             <div id="category">
-                <p><strong>Fiction</strong></p>
+                <p2><strong>Fiction</strong></p2>
                 <div id="booklist"></div>
             </div>
 
             <div id="category">
-                <p><strong>Non-Fiction</strong></p>
+                <p2><strong>Non-Fiction</strong></p2>
                 <div id="booklist2"></div>
             </div>
-            
         </div>
-
         <script src="script.js"></script>
     </body>
 </html>

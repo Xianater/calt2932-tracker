@@ -1,12 +1,12 @@
 // Setting up variables for our HTML elements using DOM selection
 const form = document.getElementById("bookform");
+// Two booklists: Fiction & Non-Fiction
 const booklist = document.getElementById("booklist");
 const booklist2 = document.getElementById("booklist2");
 
+// Setting submit button to create book record with all relevant elements
 form.addEventListener("submit", function(event) {
   event.preventDefault();
-
-  // console.log(form.elements.bookCategory.value)
 
   addBook(
     form.elements.bookTitle.value,
@@ -17,7 +17,6 @@ form.addEventListener("submit", function(event) {
     form.elements.bookComment.value,
     form.elements.bookReadTime.value,
   )
-  // console.log(bookList)
 })
 
 // Event listener listening for what is written in the categories input box
@@ -34,34 +33,35 @@ function categorySelected(ev) {
   genre.setAttribute("list", categoryName);
 }
 
-
+// Function that sets up and displays the booklists
 function displayBooks() {
-
+  // innerHTML for Fiction & Non-Fiction
   booklist.innerHTML = "";
   booklist2.innerHTML = "";
 
   let localBooks = JSON.parse(localStorage.getItem('books'));
-  // console.log(localBooks);
   
   if (localBooks !== null) {
 
     localBooks.forEach((book) => {
 
-      // console.log(book)
-
       // Create book items for the DOM and add to the list
       let item = document.createElement("li");
       item.setAttribute("data-id", book.id);
-      item.innerHTML = `<p><strong>${book.title}<br>${book.author}</strong><br>${book.genre}</p>`;
+      // Setting what each ul element displays
+      item.innerHTML =
+        `<p><strong>${book.title}</strong> by <strong>${book.author}</strong>
+        <br>Genre: <strong>${book.genre}</strong>
+        <br>Rating: <strong>${book.rating}</strong>
+        <br>Read Time: <strong>${book.readtime}</strong>
+        <br>Finished on ${book.date}
+        <br><br>${book.comment}</p>`;
       
-      // alert("book category =" + book.category);
+      // Setting books in either booklist or booklist2 depending on their category
       if (book.category == 'Fiction') { 
-        // alert("adding to fiction");
-        // alert(book.title + " is " + book.category);
         booklist.appendChild(item);
       }
       else if (book.category == 'Non-Fiction'){
-        // alert("adding to non-fiction");
         booklist2.appendChild(item);
       }
 
@@ -85,10 +85,8 @@ function displayBooks() {
 
         localStorage.setItem('books', JSON.stringify(localBooks));
 
-
         item.remove(); // Remove the book item from the page when button clicked
         // Because we used 'let' to define the item, this will always delete the right element
-
       })
 
     }) // Closing brackets for for loop
@@ -96,46 +94,8 @@ function displayBooks() {
   
 }
 
-
-
-
-// Create an object called 'book'
-// Populate the properties based on the provided data model
-
-// Commented out now the object creation is included in the function
-
-// var book = {
-//   title: "Initial Sketches",
-//   category: "Fiction",
-//   id: Date.now(),
-//   date: new Date().toISOString(),
-//   rating: 50,
-//   comment: 5,
-//   readtime: "Google"
-// }
-
-// console.log(books);
-
-
-// Create a function called 'addBook'
-// Give the function input parameters for: title, author, category, rating, comment, readtime
-// Paste your object definition from above in the function
-// Replace the property values with the input paramaters
-// Add the object to the bookList array
-
+  // Function to add books into localStorage
   function addBook(title, author, category, genre, rating, comment, readtime) {
-
-    // Creating the object with the usual property:value syntax
-    // Create book object 
-    // let book = {
-    //   title: title,
-    //   category: category,
-    //   id: Date.now(),
-    //   date: new Date().toISOString(),
-    //   rating: rating,
-    //   comment: comment,
-    //   readtime: readtime
-    // }
 
     // Creating the object, directly passing in the input parameters
     let book = {
@@ -171,9 +131,11 @@ function displayBooks() {
   }
 
 // Call the function with test values for the input paramaters
-addBook("Hail Mary", "Andy Weir", "Fiction", "Fantasy", 50, 5, "Google");
+// addBook("Hail Mary", "Andy Weir", "Non-Fiction", "Fantasy", 5, 5, "Google");
+
+// Calling the display book function
 displayBooks();
 
-let localBooks = JSON.parse(localStorage.getItem('books'));
+// let localBooks = JSON.parse(localStorage.getItem('books'));
 // Log the array to the console.
-console.log(localBooks);
+// console.log(localBooks);

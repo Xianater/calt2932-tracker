@@ -1,15 +1,18 @@
+/* Setting webpage size and font */
 html {
   height: 100%;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
-  
+
+/* Setting webpage background color */
 body {
   background-color: #EEDAC2;
   margin: 0;
   padding: 0;
 }   
 
+/* Setting header color, font & size */
 header > h1 {
   font-family: 'Open sans', Courier, monospace;
   margin: 0;
@@ -20,33 +23,35 @@ header > h1 {
   background-color: #F0CEA4;
 }
 
+/* Setting headings font and size */
 h2 {
   font-family: 'Open sans', Courier, monospace;
   font-size: medium;
-
   margin-bottom: 0;
-  
 }
 
+/* Setting form size, color & corners */
 form {
   max-width: 500px;
   margin: 0 auto;
-  /* border: 2px solid grey; */
   padding: 1em 1em;
   background-color: #FFDDB5;
   border-radius: 25px;
 }
 
+/* Setting form width flexibility */
 .form-row {
   display: flex;
   justify-content: flex-end;
   padding: .5em;
 }
 
+/* Setting form input label width */
 .form-row > label {
   width: 100px;
 }
 
+/* Setting form input parameters and corners */
 .form-row > input,
 .form-row > select {
   padding: .5em;
@@ -55,6 +60,7 @@ form {
   border-radius: 10px;
 }
 
+/* Setting rating input parameters */
 .rating{
   display: flex;
   flex-direction: row;
@@ -63,18 +69,21 @@ form {
   margin: 0 auto;
 }
 
+/* Limiting rating label width */
 .rating label{
   display: grid;
   justify-content: left;
   width: 15%;
 }
 
+/* Setting submit button color and corners */
 #submitButton {
   background-color: #F0CEA4;
   border: none;
   border-radius: 10px;
 }
 
+/* Setting form header parameters: color, size, centering, top corners */
 #finishedbook {
   background-color: #FFECD4;
   width: 300px;
@@ -91,6 +100,7 @@ form {
   justify-content: center;
 } 
 
+/* Setting list header parameters: color, size, centering, corners */
 #booksread {
   background-color: #FFECD4;
   width: 300px;
@@ -106,6 +116,7 @@ form {
   justify-content: center;
 }
 
+/* Setting book list column spacing parameters */
 #fictionnonfictionlist {
   max-width: 1200px;
   min-width: 200px;
@@ -117,6 +128,7 @@ form {
   column-gap: 50px;
 }
 
+/* Setting book list category spacing parameters */
 #category {
   max-width: 1200px;
   margin: 0 auto;
@@ -126,49 +138,32 @@ form {
   text-align: center;
   display: flex;
   flex-direction: column;
-
 }
 
-/* #book-row {
-  width: 70%;
-  height: auto;
-  margin: auto;
-  align-items: center;
-  padding: 10px;
-  border-radius: 25px;
-  background-color: #FFDCC5;
-  border: 0px solid #c3c3c3;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-} */
+/* Booklist category header parameters */
+p2 {
+  margin-top: 30px;
+  height: 18px;
+  width:auto;
+  background-color: #FFDDB5;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
 
-
-
-/* @media (min-width: 600px) {
-  #fictionnonfictionlist { grid-template-columns: repeat(2, 1fr); }
-} */
-
-/* #booklist {
-  display: flex;
-  justify-content: center;
-} */
-
+/* Setting book record parameters: color, size */
 li {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   flex-wrap: wrap;
   width: 300px;
   height: 300px;
-  margin: 50px 0;
+  margin-top: 0;
+  margin: 30px 0;
   align-items: center;
-  padding: 10px;
-  background-color: #FFDCC5;
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  background-color: #F0CEA4;
   border: 0px solid #c3c3c3;
-}
-
-h3 {
-  width: 300px;
-  height: 300px;
 }
