@@ -50,3 +50,14 @@ Updating form rating input
 - replacing rating text input with radio buttons for a rating out of 5, code from this page: https://iamkate.com/code/star-rating-widget/
 - highlighted iteration: radio buttons is an improvement for the users experience completing the form
 - cleaning up various console.logs in js
+
+Sort book records into fiction & non-fiction lists
+- sorted books into fiction & non-fiction lists with second booklist and if else if statement
+
+06/06/23
+Styling and populating the booklist records
+- populating the booklist innerHTML with all relevant book record data in js
+- styling book record dimensions and color in css
+- setting a comment character limit in html
+- commenting code
+- removing commented out old console logs and code
