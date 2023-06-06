@@ -61,3 +61,27 @@ Styling and populating the booklist records
 - setting a comment character limit in html
 - commenting code
 - removing commented out old console logs and code
+
+ReadMe update
+- updating readme file with additional information
+
+
+
+NOTE:
+Screen dimensions above 800px are best for viewing the application as both book genre lists are visible side by side
+
+Setup:
+1. Download code as .ZIP
+2. Extract .ZIP
+3. Open calt2932-tracker main folder in Visual Code Studio (or other similar program) 
+4. In the terminal type the command 'npm install'
+5. To start local server use command 'npm run start'
+6. To close local server use the control + c key
+
+
+Future developer tasks:
+- Add images for each genre to include in book records
+- Add color schemes for genre specific book records - color from image
+- Replace delete button with bin icon and confirm or cancel dialogue box
+- Add yearly reading goal setter to webpage
+- Add expandable book records to allow for longer comments
